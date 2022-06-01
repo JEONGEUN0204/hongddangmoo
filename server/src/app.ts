@@ -2,14 +2,14 @@ import express from 'express';
 
 const app = express();
 
-const PORT = process.env.PORT ||3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('build')); //build폴더 안에 있는 파일 마음대로 꺼내쓸 수 있음
 app.get('/', function (req, res) {
   res.sendFile(__dirname+'/build/index.html');
 })
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('server is runnig!');
 })
 
